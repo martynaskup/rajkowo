@@ -33,4 +33,4 @@ Details for logging page (6):
 - if the usename and password do not match -> stay on the logging page and render error message
 - if the usename and password do match -> log in and show the landing page with all details
 
-write first tests for this first and then implement it
+write first tests for this first and only then implement it
