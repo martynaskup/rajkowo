@@ -1,31 +1,11 @@
+import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Phone, PawPrintIcon as Paw, Bell } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { ImageCarousel } from "@/components/shared/image-carousel"
+import { Bell, Phone, PawPrintIcon as Paw } from "lucide-react"
+import Image from "next/image"
 
 export default function DogProfile() {
-    // Sample dog images
-    const dogImages = [
-        {
-            src: "/profile/p1.webp",
-            alt: "Dog photo",
-        },
-        {
-            src: "/profile/p2.webp",
-            alt: "Additional photo 1",
-        },
-        {
-            src: "/profile/p3.webp",
-            alt: "Additional photo 2",
-        },
-        {
-            src: "/profile/p4.webp",
-            alt: "Additional photo 3",
-        },
-    ]
-
     return (
         <div className="container mx-auto py-8 px-4">
             <Card className="max-w-3xl mx-auto">
@@ -100,7 +80,47 @@ export default function DogProfile() {
                             </p>
                         </div>
 
-                        <ImageCarousel images={dogImages} />
+                        <div className="space-y-6">
+                            <div className="aspect-square rounded-lg overflow-hidden border">
+                                <Image
+                                    src="/profile/p1.webp"
+                                    alt="Dog photo"
+                                    width={400}
+                                    height={400}
+                                    className="object-cover w-full h-full"
+                                />
+                            </div>
+
+                            <div className="grid grid-cols-3 gap-2">
+                                <div className="aspect-square rounded-md overflow-hidden border">
+                                    <Image
+                                        src="/profile/p2.webp"
+                                        alt="Additional photo 1"
+                                        width={120}
+                                        height={120}
+                                        className="object-cover w-full h-full"
+                                    />
+                                </div>
+                                <div className="aspect-square rounded-md overflow-hidden border">
+                                    <Image
+                                        src="/profile/p3.webp"
+                                        alt="Additional photo 2"
+                                        width={120}
+                                        height={120}
+                                        className="object-cover w-full h-full"
+                                    />
+                                </div>
+                                <div className="aspect-square rounded-md overflow-hidden border">
+                                    <Image
+                                        src="/profile/p4.webp"
+                                        alt="Additional photo 3"
+                                        width={120}
+                                        height={120}
+                                        className="object-cover w-full h-full"
+                                    />
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </CardContent>
 
