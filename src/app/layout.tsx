@@ -40,6 +40,9 @@ export default function RootLayout({
                 <Link href="/faq" className="hover:text-indigo-200">
                   FAQ
                 </Link>
+                <Link href="/admin" className="hover:text-indigo-200">
+                  Admin
+                </Link>
                 <Link href="/login" className="hover:text-indigo-200">
                   Login
                 </Link>
