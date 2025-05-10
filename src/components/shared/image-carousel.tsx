@@ -80,8 +80,11 @@ export function ImageCarousel({ images, initialIndex = 0 }: ImageCarouselProps) 
 
             {/* Modal with carousel */}
             <Dialog open={open} onOpenChange={setOpen}>
-                <DialogContent className="max-w-4xl p-0 bg-black/95 border-none" onKeyDown={handleKeyDown}>
-                    <div className="relative h-[80vh] flex items-center justify-center">
+                <DialogContent
+                    className="max-w-none w-screen h-screen p-0 m-0 border-none bg-black/95"
+                    onKeyDown={handleKeyDown}
+                >
+                    <div className="relative w-full h-full flex items-center justify-center">
                         <DialogClose className="absolute right-4 top-4 z-10">
                             <Button variant="ghost" size="icon" className="text-white hover:bg-white/20 rounded-full">
                                 <X className="h-6 w-6" />
@@ -91,38 +94,38 @@ export function ImageCarousel({ images, initialIndex = 0 }: ImageCarouselProps) 
                         <Button
                             variant="ghost"
                             size="icon"
-                            className="absolute left-4 z-10 text-white hover:bg-white/20 rounded-full"
+                            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 text-white hover:bg-white/20 rounded-full h-12 w-12"
                             onClick={handlePrevious}
                         >
                             <ChevronLeft className="h-8 w-8" />
                         </Button>
 
-                        <div className="h-full w-full flex items-center justify-center p-8">
+                        <div className="h-full w-full flex items-center justify-center p-4">
                             <Image
                                 src={images[currentIndex].src || "/placeholder.svg"}
                                 alt={images[currentIndex].alt}
                                 width={1200}
                                 height={1200}
-                                className="max-h-full max-w-full object-contain"
+                                className="max-h-[90vh] max-w-[90vw] object-contain"
                             />
                         </div>
 
                         <Button
                             variant="ghost"
                             size="icon"
-                            className="absolute right-4 z-10 text-white hover:bg-white/20 rounded-full"
+                            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 text-white hover:bg-white/20 rounded-full h-12 w-12"
                             onClick={handleNext}
                         >
                             <ChevronRight className="h-8 w-8" />
                         </Button>
 
-                        <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+                        <div className="absolute bottom-8 left-0 right-0 flex justify-center gap-2">
                             {images.map((_, index) => (
                                 <Button
                                     key={index}
                                     variant="ghost"
                                     size="sm"
-                                    className={`w-2 h-2 p-0 rounded-full ${index === currentIndex ? "bg-white" : "bg-white/50"}`}
+                                    className={`w-3 h-3 p-0 rounded-full ${index === currentIndex ? "bg-white" : "bg-white/50"}`}
                                     onClick={() => setCurrentIndex(index)}
                                 />
                             ))}
