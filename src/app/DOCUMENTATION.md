@@ -23,3 +23,14 @@ Details for the 8)
 - should containt name, age, color, description, height, weight, diseases
 - location: city, suburbs
 - details about owner: name, surname, phhone, email
+
+Details for logging page (6):
+
+# Input 
+- update the login page
+- the user can provide the username and password
+# Output
+- if the usename and password do not match -> stay on the logging page and render error message
+- if the usename and password do match -> log in and show the landing page with all details
+
+write first tests for this first and then implement it
