@@ -44,3 +44,6 @@ next-env.d.ts
 
 # local test files that might contain sensitive data
 test-connection.js
+
+# local env files
+.env*.local
